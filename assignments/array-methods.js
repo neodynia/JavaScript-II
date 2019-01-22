@@ -458,16 +458,29 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName.
 let fullName = []
+/**
+ * TODO: Iterate over the runners array using forEach
+ * TODO: Each iteration will combine runners.first_name with runners.last_name
+ * TODO: Combine with object dot notation
+ * TODO: Push each iteration result into the fullName array
+ * TODO: Return fullName and log to console.
+ */
+const fullNames = runners.forEach(runner =>
+  fullName.push(`${runner.last_name}, ${runner.first_name}`)
+)
 console.log(fullName)
+console.log('HI')
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
-let allCaps = []
+const allCaps = runners.map(
+  runner => `${runner.last_name}, ${runner.first_name.toUpperCase()}`
+)
 console.log(allCaps)
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = []
+let largeShirts = runners.filter(runner => runner.shirt_size === 'L')
 console.log(largeShirts)
 
 // ==== Challenge 4: Use .reduce() ====
@@ -483,3 +496,22 @@ console.log(ticketPriceTotal)
 // Problem 2
 
 // Problem 3
+
+const fruits = ['Apples'] //?
+
+fruits.map(fruit => fruit.toUpperCase()).filter(fruit => fruit.length > 5) //?
+const longerUppercaseFruits = fruits.reduce((myNewLongerUppercaseFruits, curFruit) => {
+  if (curFruit.length > 5) {
+    return myNewLongerUppercaseFruits.concat(curFruit.toUpperCase()) //?
+  }
+  return myNewLongerUppercaseFruits
+}, [])
+console.log(longerUppercaseFruits)
+
+const arr1 = [1, 2, 3, 4]
+
+arr1.concat([1]) //?
+
+arr1.map(item => console.log(item))
+
+console.log(arr1)
